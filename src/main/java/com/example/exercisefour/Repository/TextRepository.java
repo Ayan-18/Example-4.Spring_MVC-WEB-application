@@ -10,7 +10,9 @@ import java.util.List;
 public interface TextRepository extends ElasticsearchRepository<Text, String> {
 
     void deleteById(String id);
-    List<Text> findAllByTextContainingIgnoreCase(String text);
+
+    Page<Text> findAllByTextContainingIgnoreCase(String text, Pageable pageable);
+
     Page<Text> findAll(Pageable pageable);
 
 

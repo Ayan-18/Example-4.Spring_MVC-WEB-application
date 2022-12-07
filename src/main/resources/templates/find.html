@@ -10,6 +10,17 @@ Searching document:
 <form action="/documents/find" method="get">
     <label>
         <input type="text" name="text" size="50">
+        Number of page
+        <input type="number" name="page">
+        Size of page
+        <input type="number" name="size">
+        Order of page
+        <select name="orderBy">
+            <option value="id">ID</option>
+            <option value="Text">Text</option>
+            <option value="dateReg">Date of registration</option>
+        </select>
+
     </label>
     <p></p>
     <div>
