@@ -59,9 +59,4 @@ public class TextController {
         modelAndView.addObject("texts", texts);
         return modelAndView;
     }
-
-    @GetMapping(path = "/{id}")
-    public void delete(@PathVariable String id) {
-        textService.delete(id);
-    }
 }

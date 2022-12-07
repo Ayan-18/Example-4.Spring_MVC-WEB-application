@@ -6,10 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -29,4 +26,8 @@ public class TextRestController {
                 Sort.Direction.ASC, sortBy.orElse("id")));
     }
 
+    @GetMapping(path = "/{id}")
+    public void delete(@PathVariable String id) {
+        textService.delete(id);
+    }
 }
